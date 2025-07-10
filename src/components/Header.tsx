@@ -23,15 +23,15 @@ const Header = () => {
           <div className="flex items-center space-x-6">
             <div className="flex items-center space-x-2">
               <Phone className="h-4 w-4" />
-              <span>+1 (555) 123-4567</span>
+              <span>+54 9 11 3267-7714</span>
             </div>
             <div className="flex items-center space-x-2">
               <MapPin className="h-4 w-4" />
-              <span>123 Dental Street, City, State 12345</span>
+              <span>Ruiz Huidobro 3059, CABA, depto 601</span>
             </div>
             <div className="flex items-center space-x-2">
               <Clock className="h-4 w-4" />
-              <span>Mon-Fri 8AM-6PM</span>
+              <span>FRI 14-20</span>
             </div>
           </div>
           <Button size="sm" variant="outline" className="bg-white text-healthcare-blue hover:bg-gray-50">
