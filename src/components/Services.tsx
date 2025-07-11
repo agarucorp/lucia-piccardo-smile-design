@@ -6,44 +6,44 @@ const Services = () => {
   const services = [
     {
       icon: Smile,
-      title: "General Dentistry",
-      description: "Comprehensive dental care including cleanings, fillings, and routine check-ups to maintain optimal oral health.",
-      features: ["Regular Cleanings", "Cavity Fillings", "Oral Examinations", "Preventive Care"],
+      title: "Odontología general",
+      description: "Cuidado dental integral que incluye limpiezas, empastes y controles de rutina para mantener una salud bucal óptima.",
+      features: ["Limpiezas dentales", "Caries", "Diagnóstico", "Prevención"],
       color: "bg-blue-500"
     },
     {
       icon: Sparkles,
-      title: "Cosmetic Dentistry",
-      description: "Transform your smile with advanced cosmetic procedures designed to enhance your appearance and confidence.",
-      features: ["Teeth Whitening", "Veneers", "Bonding", "Smile Makeovers"],
+      title: "Prótesis",
+      description: "Recuperá la función y estética de tus dientes con nuestros tratamientos protésicos.",
+      features: ["Implantes", "Prótesis fija sobre implante", "Prótesis fija sobre diente", "Prótesis removible", "Carillas"],
       color: "bg-purple-500"
     },
     {
-      icon: Shield,
-      title: "Restorative Dentistry",
-      description: "Restore function and aesthetics to damaged teeth with our advanced restorative treatments.",
-      features: ["Dental Crowns", "Bridges", "Implants", "Dentures"],
-      color: "bg-green-500"
-    },
-    {
-      icon: Zap,
-      title: "Emergency Dentistry",
-      description: "Immediate care for dental emergencies with same-day appointments and urgent treatment options.",
-      features: ["Pain Relief", "Trauma Care", "Same-Day Service", "24/7 Support"],
-      color: "bg-red-500"
-    },
-    {
       icon: Stethoscope,
-      title: "Oral Surgery",
-      description: "Advanced surgical procedures performed with precision and care in a comfortable environment.",
-      features: ["Extractions", "Implant Surgery", "Bone Grafting", "Sedation Options"],
+      title: "Cirugía oral",
+      description: "Procedimientos quirúrgicos avanzados realizados con precisión y cuidado en un entorno confortable.",
+      features: ["Extracciones", "Cirugía de implantes", "Injertos óseos", "Injerto de tejido conectivo"],
       color: "bg-orange-500"
     },
     {
+      icon: Zap,
+      title: "Odontopediatría",
+      description: "Nuestro enfoque en la prevención asegura que los más pequeños tengan sonrisas saludables.",
+      features: ["Instrucción de Higiene Oral", "Tratamientos de Flúor", "Selladores"],
+      color: "bg-red-500"
+    },
+    {
+      icon: Shield,
+      title: "Endodoncia",
+      description: "Este tratamiento salva tus dientes en caso de caries profundas, fracturas dentales y dolor.",
+      features: [],
+      color: "bg-green-500"
+    },
+    {
       icon: Camera,
-      title: "Digital Dentistry",
-      description: "State-of-the-art digital technology for accurate diagnosis and precise treatment planning.",
-      features: ["Digital X-rays", "3D Imaging", "Intraoral Cameras", "CAD/CAM Technology"],
+      title: "Blanqueamiento",
+      description: "Este tratamiento te permite sonreír sin tener vergüenza. Verás cambios desde la primera sesión.",
+      features: [],
       color: "bg-teal-500"
     }
   ];
@@ -53,11 +53,10 @@ const Services = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Comprehensive Dental Services
+            Servicios odontológicos integrales
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From routine cleanings to advanced procedures, we offer a complete range of dental services 
-            using the latest technology and techniques.
+            Desde limpiezas de rutina hasta procedimientos avanzados, ofrecemos una gama completa de servicios dentales utilizando la última tecnología y técnicas modernas.
           </p>
         </div>
 
@@ -83,12 +82,6 @@ const Services = () => {
                 ))}
               </ul>
               
-              <Button 
-                variant="outline" 
-                className="w-full border-healthcare-blue text-healthcare-blue hover:bg-healthcare-blue hover:text-white"
-              >
-                Learn More
-              </Button>
             </div>
           ))}
         </div>
@@ -97,15 +90,15 @@ const Services = () => {
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
               <h3 className="text-3xl font-bold text-healthcare-blue mb-2">15+</h3>
-              <p className="text-gray-600">Years of Experience</p>
+              <p className="text-gray-600">Años de experiencia</p>
             </div>
             <div>
               <h3 className="text-3xl font-bold text-healthcare-blue mb-2">2000+</h3>
-              <p className="text-gray-600">Happy Patients</p>
+              <p className="text-gray-600">Pacientes felices</p>
             </div>
             <div>
               <h3 className="text-3xl font-bold text-healthcare-blue mb-2">100%</h3>
-              <p className="text-gray-600">Satisfaction Rate</p>
+              <p className="text-gray-600">Satisfacción garantizada</p>
             </div>
           </div>
         </div>

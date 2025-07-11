@@ -2,24 +2,25 @@
 import { useState } from 'react';
 import { Menu, X, Phone, MapPin, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logoLutcy from './assets/logoLutcy.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Location', href: '#location' },
-    { name: 'FAQ', href: '#faq' },
-    { name: 'Contact', href: '#contact' },
+    // { name: 'Home', href: '#home' },
+    { name: 'Acerca de', href: '#about' },
+    { name: 'Servicios', href: '#services' },
+    // { name: 'Location', href: '#location' },
+    { name: 'Preguntas frecuentes', href: '#faq' },
+    { name: 'Contacto', href: '#contact' },
   ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
       {/* Top bar with contact info */}
       <div className="bg-healthcare-blue text-white py-2 px-4">
-        <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
+        <div className="max-w-7xl mx-auto flex justify-center items-center text-sm">
           <div className="flex items-center space-x-6">
             <div className="flex items-center space-x-2">
               <Phone className="h-4 w-4" />
@@ -34,9 +35,6 @@ const Header = () => {
               <span>FRI 14-20</span>
             </div>
           </div>
-          <Button size="sm" variant="outline" className="bg-white text-healthcare-blue hover:bg-gray-50">
-            Book Appointment
-          </Button>
         </div>
       </div>
 
@@ -44,11 +42,12 @@ const Header = () => {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-healthcare-blue">
-              Dr. Lucia Piccardo
-            </h1>
-            <p className="text-xs text-gray-600 -mt-1">Dental Excellence</p>
+          <div className="flex-shrink-0 flex items-center space-x-2">
+            <img
+              src={logoLutcy}
+              alt="Logo Lutcy"
+              className="h-12 w-auto object-contain"
+            />
           </div>
 
           {/* Desktop navigation */}

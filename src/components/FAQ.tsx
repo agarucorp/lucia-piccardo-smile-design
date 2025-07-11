@@ -7,36 +7,36 @@ const FAQ = () => {
 
   const faqItems = [
     {
-      question: "How often should I visit the dentist?",
-      answer: "We recommend visiting every 6 months for routine cleanings and check-ups. However, some patients may need more frequent visits based on their oral health needs. Dr. Piccardo will create a personalized schedule that's right for you."
+      question: "¿Con qué frecuencia debo ir al dentista?",
+      answer: "Recomendamos una visita cada 6 meses para limpiezas y controles de rutina. Sin embargo, algunos pacientes pueden requerir visitas más frecuentes según sus necesidades. La Dra. Piccardo creará un plan personalizado para vos."
     },
     {
-      question: "Do you accept dental insurance?",
-      answer: "Yes, we accept most major dental insurance plans. Our office staff will help verify your benefits and maximize your insurance coverage. We also offer flexible payment options for treatments not covered by insurance."
+      question: "¿Aceptan obras sociales o prepagas?",
+      answer: "Sí, aceptamos la mayoría de las obras sociales y prepagas odontológicas. Nuestro equipo te ayudará a verificar tus beneficios y aprovechar al máximo tu cobertura. También ofrecemos opciones de pago flexibles para tratamientos no cubiertos."
     },
     {
-      question: "What should I expect during my first visit?",
-      answer: "Your first visit includes a comprehensive examination, digital X-rays if needed, and a thorough discussion of your dental history and concerns. We'll create a personalized treatment plan and discuss any recommended procedures."
+      question: "¿Qué puedo esperar en mi primera consulta?",
+      answer: "Tu primera consulta incluye un examen completo, radiografías digitales si es necesario y una charla sobre tu historia clínica y tus inquietudes. Crearemos un plan de tratamiento personalizado y te explicaremos los procedimientos recomendados."
     },
     {
-      question: "Are dental X-rays safe?",
-      answer: "Yes, dental X-rays are very safe. We use digital X-rays which produce 80% less radiation than traditional X-rays. The amount of radiation exposure is minimal and similar to what you'd experience on a short airplane flight."
+      question: "¿Las radiografías dentales son seguras?",
+      answer: "Sí, las radiografías dentales son muy seguras. Utilizamos radiografías digitales que emiten un 80% menos de radiación que las tradicionales. La exposición es mínima y comparable a la de un vuelo corto en avión."
     },
     {
-      question: "How can I manage dental anxiety?",
-      answer: "We understand dental anxiety is common. Our team creates a calm, comfortable environment, and we offer various sedation options including nitrous oxide (laughing gas) and oral sedation to help you feel relaxed during treatment."
+      question: "¿Cómo puedo manejar la ansiedad dental?",
+      answer: "Sabemos que la ansiedad dental es común. Nuestro equipo genera un ambiente tranquilo y cómodo, y ofrecemos opciones de sedación como óxido nitroso y sedación oral para que te sientas relajado durante el tratamiento."
     },
     {
-      question: "What are the signs I might need a root canal?",
-      answer: "Signs include severe toothache when chewing, prolonged sensitivity to hot or cold, darkening of the tooth, or swelling of nearby gums. If you experience any of these symptoms, please contact us immediately."
+      question: "¿Cuáles son los síntomas de que necesito una endodoncia?",
+      answer: "Algunos síntomas son dolor intenso al masticar, sensibilidad prolongada al frío o calor, oscurecimiento del diente o hinchazón de las encías cercanas. Si tenés alguno de estos síntomas, contactanos cuanto antes."
     },
     {
-      question: "How long do dental implants last?",
-      answer: "With proper care and maintenance, dental implants can last a lifetime. The success rate is over 95%, and most patients experience no issues with their implants for decades. Regular dental visits help ensure long-term success."
+      question: "¿Cuánto duran los implantes dentales?",
+      answer: "Con el cuidado y mantenimiento adecuados, los implantes pueden durar toda la vida. La tasa de éxito es superior al 95% y la mayoría de los pacientes no tiene problemas durante décadas. Las visitas regulares ayudan a garantizar el éxito a largo plazo."
     },
     {
-      question: "What's the difference between crowns and veneers?",
-      answer: "Crowns cover the entire tooth and are used for damaged or severely decayed teeth. Veneers are thin shells that cover only the front surface of teeth and are primarily used for cosmetic improvements like whitening or reshaping."
+      question: "¿Cuál es la diferencia entre coronas y carillas?",
+      answer: "Las coronas cubren todo el diente y se usan para dientes dañados o muy deteriorados. Las carillas son láminas delgadas que cubren solo la parte frontal y se usan principalmente para mejorar la estética, como el color o la forma."
     }
   ];
 
@@ -45,10 +45,10 @@ const FAQ = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Frequently Asked Questions
+            Preguntas frecuentes
           </h2>
           <p className="text-xl text-gray-600">
-            Get answers to common questions about dental care and our services
+            Respondemos las dudas más comunes sobre salud bucal y nuestros servicios
           </p>
         </div>
 
@@ -78,23 +78,6 @@ const FAQ = () => {
               )}
             </div>
           ))}
-        </div>
-
-        <div className="mt-16 bg-white rounded-3xl p-8 shadow-lg text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Still Have Questions?
-          </h3>
-          <p className="text-gray-600 mb-6">
-            Our friendly team is here to help. Contact us for personalized answers to your dental concerns.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-healthcare-blue hover:bg-healthcare-dark-blue text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200">
-              Call Us Today
-            </button>
-            <button className="border border-healthcare-blue text-healthcare-blue hover:bg-healthcare-blue hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200">
-              Send a Message
-            </button>
-          </div>
         </div>
       </div>
     </section>
