@@ -19,36 +19,19 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-[9999] bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-lg w-full">
       {/* Top bar with contact info */}
-      <div className="hidden md:block bg-healthcare-blue text-white py-2 px-4">
+      <div className="bg-healthcare-blue text-white py-2 px-4">
         <div className="max-w-7xl mx-auto flex justify-center items-center text-sm">
-          {/* Mobile layout: phone and hours on left, address on right */}
-          <div className="md:hidden w-full flex justify-between items-start">
-            <div className="flex flex-col space-y-1">
-              <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4" />
-                <a 
-                  href="https://wa.me/5491132677714" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="hover:underline transition-colors duration-200"
-                >
-                  <span>+54 9 11 3267-7714</span>
-                </a>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Clock className="h-4 w-4" />
-                <span>FRI 14-20</span>
-              </div>
-            </div>
-            <div className="flex items-center space-x-2 text-right">
-              <MapPin className="h-4 w-4" />
+          {/* Mobile layout: only phone */}
+          <div className="md:hidden w-full flex justify-center items-center">
+            <div className="flex items-center space-x-2">
+              <Phone className="h-4 w-4" />
               <a 
-                href="https://maps.google.com/?q=Ruiz+Huidobro+3059,+Saavedra,+CABA,+Argentina" 
+                href="https://wa.me/5491132677714" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:underline transition-colors duration-200"
               >
-                <span>Ruiz Huidobro 3059, Saavedra, CABA</span>
+                <span>+54 9 11 3267-7714</span>
               </a>
             </div>
           </div>
