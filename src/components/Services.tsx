@@ -85,23 +85,6 @@ const Services = () => {
             </div>
           ))}
         </div>
-
-        <div className="mt-16 bg-white rounded-3xl p-8 shadow-lg">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <h3 className="text-3xl font-bold text-healthcare-blue mb-2">15+</h3>
-              <p className="text-gray-600">Años de experiencia</p>
-            </div>
-            <div>
-              <h3 className="text-3xl font-bold text-healthcare-blue mb-2">2000+</h3>
-              <p className="text-gray-600">Pacientes felices</p>
-            </div>
-            <div>
-              <h3 className="text-3xl font-bold text-healthcare-blue mb-2">100%</h3>
-              <p className="text-gray-600">Satisfacción garantizada</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

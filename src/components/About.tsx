@@ -1,5 +1,6 @@
 
 import { Award, GraduationCap, Heart, Users } from 'lucide-react';
+import lutcyFoto from './assets/lutcyFoto.jpg';
 
 const About = () => {
   return (
@@ -10,8 +11,8 @@ const About = () => {
           <div className="animate-fade-in">
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1473177104440-ffee2f376098?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                alt="Dra. Lucía Piccardo"
+                src={lutcyFoto}
+                alt="Od. Lucía Piccardo"
                 className="rounded-3xl shadow-2xl w-full h-96 object-cover"
               />
               <div className="absolute -top-6 -right-6 bg-healthcare-blue rounded-2xl p-6 text-white">
@@ -25,10 +26,10 @@ const About = () => {
           {/* Right content */}
           <div className="animate-slide-in-right flex flex-col justify-center h-full">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Conocé a la Dra. Lucía Piccardo
+              Conocé a la Od. Lucía Piccardo
             </h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Con más de 15 años de experiencia en odontología avanzada, la Dra. Lucía Piccardo se compromete a brindar tratamientos excepcionales con un enfoque humano y centrado en el paciente. Su pasión por la odontología y dedicación al aprendizaje continuo garantizan que recibas la atención más avanzada disponible.
+              Con más de 5 años de experiencia en odontología avanzada, la Dra. Lucía Piccardo se compromete a brindar tratamientos excepcionales con un enfoque humano y centrado en el paciente. Su pasión por la odontología y dedicación al aprendizaje continuo garantizan que recibas la atención más avanzada disponible.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">

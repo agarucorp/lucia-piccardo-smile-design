@@ -17,22 +17,69 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+    <header className="fixed top-0 left-0 right-0 z-[9999] bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-lg w-full">
       {/* Top bar with contact info */}
-      <div className="bg-healthcare-blue text-white py-2 px-4">
+      <div className="hidden md:block bg-healthcare-blue text-white py-2 px-4">
         <div className="max-w-7xl mx-auto flex justify-center items-center text-sm">
-          <div className="flex items-center space-x-6">
+          {/* Mobile layout: phone and hours on left, address on right */}
+          <div className="md:hidden w-full flex justify-between items-start">
+            <div className="flex flex-col space-y-1">
+              <div className="flex items-center space-x-2">
+                <Phone className="h-4 w-4" />
+                <a 
+                  href="https://wa.me/5491132677714" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:underline transition-colors duration-200"
+                >
+                  <span>+54 9 11 3267-7714</span>
+                </a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Clock className="h-4 w-4" />
+                <span>FRI 14-20</span>
+              </div>
+            </div>
+            <div className="flex items-center space-x-2 text-right">
+              <MapPin className="h-4 w-4" />
+              <a 
+                href="https://maps.google.com/?q=Ruiz+Huidobro+3059,+Saavedra,+CABA,+Argentina" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:underline transition-colors duration-200"
+              >
+                <span>Ruiz Huidobro 3059, Saavedra, CABA</span>
+              </a>
+            </div>
+          </div>
+          
+          {/* Desktop layout: all items in a row */}
+          <div className="hidden md:flex items-center space-x-6">
             <div className="flex items-center space-x-2">
               <Phone className="h-4 w-4" />
-              <span>+54 9 11 3267-7714</span>
+              <a 
+                href="https://wa.me/5491132677714" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:underline transition-colors duration-200"
+              >
+                <span>+54 9 11 3267-7714</span>
+              </a>
             </div>
             <div className="flex items-center space-x-2">
               <MapPin className="h-4 w-4" />
-              <span>Ruiz Huidobro 3059, CABA, depto 601</span>
+              <a 
+                href="https://maps.google.com/?q=Ruiz+Huidobro+3059,+Saavedra,+CABA,+Argentina" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:underline transition-colors duration-200"
+              >
+                <span>Ruiz Huidobro 3059, Saavedra, CABA</span>
+              </a>
             </div>
             <div className="flex items-center space-x-2">
               <Clock className="h-4 w-4" />
-              <span>FRI 14-20</span>
+              <span>Viernes 14-20</span>
             </div>
           </div>
         </div>
@@ -83,8 +130,8 @@ const Header = () => {
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+          <div className="md:hidden fixed top-16 left-0 right-0 z-[9998] bg-white border-b border-gray-100 shadow-lg">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white">
               {navItems.map((item) => (
                 <a
                   key={item.name}

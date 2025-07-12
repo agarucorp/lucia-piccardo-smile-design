@@ -4,6 +4,7 @@ import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,17 +15,158 @@ const Contact = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: '',
+    message: ''
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  // EmailJS configuration
+  const EMAILJS_SERVICE_ID = 'service_9n5hz5p'; // Reemplazar con tu Service ID
+  const EMAILJS_TEMPLATE_ID = 'template_lmk13oj'; // Reemplazar con tu Template ID
+  const EMAILJS_PUBLIC_KEY = 'gSZSnSm2tBgf7HXno'; // Reemplazar con tu Public Key
+
+  // Validation functions
+  const validateField = (name: string, value: string): string => {
+    switch (name) {
+      case 'name':
+        if (!value.trim()) return 'El nombre es obligatorio';
+        if (value.trim().length < 2) return 'El nombre debe tener al menos 2 caracteres';
+        return '';
+      
+      case 'email':
+        if (!value.trim()) return 'El email es obligatorio';
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) return 'Ingresa un email válido';
+        return '';
+      
+      case 'phone':
+        if (!value.trim()) return 'El teléfono es obligatorio';
+        const phoneRegex = /^\d+$/;
+        if (!phoneRegex.test(value)) return 'Ingresa un teléfono válido (solo números)';
+        if (value.trim().length < 8) return 'El teléfono debe tener al menos 8 dígitos';
+        if (value.trim().length > 10) return 'El teléfono no puede tener más de 10 dígitos';
+        return '';
+      
+      case 'service':
+        if (!value.trim()) return 'Selecciona un servicio';
+        return '';
+      
+      case 'message':
+        if (!value.trim()) return 'El mensaje es obligatorio';
+        if (value.trim().length < 10) return 'El mensaje debe tener al menos 10 caracteres';
+        return '';
+      
+      default:
+        return '';
+    }
+  };
+
+  const validateForm = (): boolean => {
+    const newErrors = {
+      name: validateField('name', formData.name),
+      email: validateField('email', formData.email),
+      phone: validateField('phone', formData.phone),
+      service: validateField('service', formData.service),
+      message: validateField('message', formData.message)
+    };
+
+    setErrors(newErrors);
+    return !Object.values(newErrors).some(error => error !== '');
+  };
+
+  const isFormValid = (): boolean => {
+    return formData.name.trim() !== '' &&
+           formData.email.trim() !== '' &&
+           formData.phone.trim() !== '' &&
+           formData.service.trim() !== '' &&
+           formData.message.trim() !== '' &&
+           !Object.values(errors).some(error => error !== '');
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission logic here
+    
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        from_phone: formData.phone,
+        service: formData.service,
+        message: formData.message,
+        to_email: 'lucia.piccardo@gmail.com'
+      };
+
+      const result = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
+
+      if (result.status === 200) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+        setErrors({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+    
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+
+    // Clear error when user starts typing
+    if (errors[name as keyof typeof errors]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    const error = validateField(name, value);
+    setErrors(prev => ({
+      ...prev,
+      [name]: error
+    }));
   };
 
   return (
@@ -35,7 +177,7 @@ const Contact = () => {
             Agendá tu turno
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            ¿Listo para lograr tu mejor sonrisa? Contactanos hoy para reservar tu consulta con la Dra. Lucía Piccardo.
+            ¿Listo para lograr tu mejor sonrisa? Contactanos hoy para reservar tu consulta con la Od. Lucía Piccardo.
           </p>
         </div>
 
@@ -44,6 +186,19 @@ const Contact = () => {
           <div className="flex flex-col justify-center h-full">
             <div className="bg-healthcare-light-blue rounded-3xl p-8 h-full flex flex-col justify-center min-h-full">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Envíanos un mensaje</h3>
+              
+              {/* Status Messages */}
+              {submitStatus === 'success' && (
+                <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+                  ¡Mensaje enviado exitosamente! Te responderemos pronto.
+                </div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+                  Hubo un error al enviar el mensaje. Por favor, intentá nuevamente.
+                </div>
+              )}
               
               <form onSubmit={handleSubmit} className="space-y-6 flex flex-col h-full justify-center">
                 <div>
@@ -57,10 +212,18 @@ const Contact = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full bg-white border-gray-300 focus:border-healthcare-blue focus:ring-healthcare-blue"
+                    onBlur={handleBlur}
+                    className={`w-full bg-white border-gray-300 focus:border-healthcare-blue focus:ring-healthcare-blue ${
+                      errors.name ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''
+                    }`}
                     placeholder="Tu nombre completo"
+                    disabled={isSubmitting}
                   />
+                  {errors.name && (
+                    <p className="mt-1 text-sm text-red-600">{errors.name}</p>
+                  )}
                 </div>
+                
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                     Correo electrónico *
@@ -72,10 +235,18 @@ const Contact = () => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full bg-white border-gray-300 focus:border-healthcare-blue focus:ring-healthcare-blue"
+                    onBlur={handleBlur}
+                    className={`w-full bg-white border-gray-300 focus:border-healthcare-blue focus:ring-healthcare-blue ${
+                      errors.email ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''
+                    }`}
                     placeholder="tu@email.com"
+                    disabled={isSubmitting}
                   />
+                  {errors.email && (
+                    <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+                  )}
                 </div>
+                
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                     Teléfono *
@@ -83,54 +254,90 @@ const Contact = () => {
                   <Input
                     id="phone"
                     name="phone"
-                    type="tel"
+                    type="number"
                     required
+                    maxLength={10}
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full bg-white border-gray-300 focus:border-healthcare-blue focus:ring-healthcare-blue"
-                    placeholder="(11) 1234-5678"
+                    onBlur={handleBlur}
+                    className={`w-full bg-white border-gray-300 focus:border-healthcare-blue focus:ring-healthcare-blue [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none ${
+                      errors.phone ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''
+                    }`}
+                    placeholder="1132677714"
+                    disabled={isSubmitting}
                   />
+                  {errors.phone && (
+                    <p className="mt-1 text-sm text-red-600">{errors.phone}</p>
+                  )}
                 </div>
+                
                 <div>
                   <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-                    Servicio requerido
+                    Servicio requerido *
                   </label>
                   <select
                     id="service"
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 focus:border-healthcare-blue focus:ring-healthcare-blue"
+                    onBlur={handleBlur}
+                    className={`w-full bg-white border border-gray-300 rounded-lg px-4 py-2 focus:border-healthcare-blue focus:ring-healthcare-blue ${
+                      errors.service ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''
+                    }`}
+                    disabled={isSubmitting}
                   >
                     <option value="">Seleccioná un servicio</option>
-                    <option value="cleaning">Limpieza dental</option>
-                    <option value="checkup">Control</option>
-                    <option value="cosmetic">Estética dental</option>
-                    <option value="restorative">Rehabilitación</option>
-                    <option value="emergency">Urgencia</option>
-                    <option value="other">Otro</option>
+                    <option value="odontologia-general">Odontología general</option>
+                    <option value="protesis">Prótesis</option>
+                    <option value="cirugia-oral">Cirugía oral</option>
+                    <option value="odontopediatria">Odontopediatría</option>
+                    <option value="endodoncia">Endodoncia</option>
+                    <option value="blanqueamiento">Blanqueamiento</option>
                   </select>
+                  {errors.service && (
+                    <p className="mt-1 text-sm text-red-600">{errors.service}</p>
+                  )}
                 </div>
+                
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Mensaje
+                    Mensaje *
                   </label>
                   <Textarea
                     id="message"
                     name="message"
                     rows={4}
+                    required
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full bg-white border-gray-300 focus:border-healthcare-blue focus:ring-healthcare-blue"
+                    onBlur={handleBlur}
+                    className={`w-full bg-white border-gray-300 focus:border-healthcare-blue focus:ring-healthcare-blue ${
+                      errors.message ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''
+                    }`}
                     placeholder="Contanos tus necesidades o dudas..."
+                    disabled={isSubmitting}
                   />
+                  {errors.message && (
+                    <p className="mt-1 text-sm text-red-600">{errors.message}</p>
+                  )}
                 </div>
+                
                 <Button 
                   type="submit"
-                  className="w-full bg-healthcare-blue hover:bg-healthcare-dark-blue text-white py-3 text-lg"
+                  className="w-full bg-healthcare-blue hover:bg-healthcare-dark-blue text-white py-3 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled={isSubmitting || !isFormValid()}
                 >
-                  Enviar mensaje
-                  <Send className="ml-2 h-5 w-5" />
+                  {isSubmitting ? (
+                    <>
+                      Enviando...
+                      <div className="ml-2 h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
+                    </>
+                  ) : (
+                    <>
+                      Enviar mensaje
+                      <Send className="ml-2 h-5 w-5" />
+                    </>
+                  )}
                 </Button>
               </form>
             </div>
@@ -148,8 +355,14 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Teléfono</h4>
-                    <p className="text-gray-600">+54 9 11 3267-7714</p>
-                    <p className="text-sm text-gray-500">Viernes 14 a 20 hs</p>
+                    <a 
+                      href="https://wa.me/5491132677714" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-healthcare-blue transition-colors duration-200"
+                    >
+                      +54 9 11 3267-7714
+                    </a>
                   </div>
                 </div>
 
@@ -159,7 +372,12 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Correo electrónico</h4>
-                    <p className="text-gray-600">info@drluciapiccardo.com</p>
+                    <a 
+                      href="mailto:lucia.piccardo@gmail.com"
+                      className="text-gray-600 hover:text-healthcare-blue transition-colors duration-200"
+                    >
+                      lucia.piccardo@gmail.com
+                    </a>
                     <p className="text-sm text-gray-500">Respondemos en menos de 24 hs</p>
                   </div>
                 </div>
@@ -170,7 +388,14 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Dirección</h4>
-                    <p className="text-gray-600">Ruiz Huidobro 3059, depto 601<br />CABA</p>
+                    <a 
+                      href="https://maps.google.com/?q=Ruiz+Huidobro+3059,+Saavedra,+CABA,+Argentina"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-healthcare-blue transition-colors duration-200"
+                    >
+                      Ruiz Huidobro 3059, Saavedra<br />CABA
+                    </a>
                   </div>
                 </div>
 

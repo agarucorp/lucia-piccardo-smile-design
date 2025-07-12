@@ -2,10 +2,11 @@
 import { ArrowRight, Shield, Award, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroLutcy from './assets/heroLutcy.jpg';
+import lutcyConsul from './assets/lutcyConsul.jpg';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen bg-gradient-to-br from-healthcare-light-blue via-white to-healthcare-mint pt-20">
+    <section id="home" className="min-h-screen bg-gradient-to-br from-healthcare-light-blue via-white to-healthcare-mint pt-16 md:pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
@@ -15,7 +16,7 @@ const Hero = () => {
               <span className="text-healthcare-blue block">perfecta empieza aquí</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              La Dra. Lucía Piccardo combina tecnología dental avanzada con atención humana para brindar resultados excepcionales. Viví la odontología de primer nivel en un entorno moderno y confortable.
+              La Odontóloga Lucía Piccardo combina tecnología dental avanzada con atención humana para brindar resultados excepcionales. Viví la odontología de primer nivel en un entorno moderno y confortable.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -35,8 +36,8 @@ const Hero = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-healthcare-blue to-healthcare-dark-blue rounded-3xl transform rotate-3"></div>
               <img
-                src={heroLutcy}
-                alt="Hero Lutcy"
+                src={lutcyConsul}
+                alt="Consultorio Lutcy"
                 className="relative rounded-3xl shadow-2xl w-full h-96 object-cover"
               />
               <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-lg">

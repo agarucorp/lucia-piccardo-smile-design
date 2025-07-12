@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-2">
-            <h3 className="text-2xl font-bold mb-4">Dra. Lucía Piccardo</h3>
+            <h3 className="text-2xl font-bold mb-4">Od. Lucía Piccardo</h3>
             <p className="text-blue-100 mb-6 leading-relaxed">
               Brindando atención odontológica de excelencia y con calidez humana. Tu sonrisa es nuestra prioridad y nos comprometemos a ayudarte a lograr una salud bucal óptima en un entorno moderno y confortable.
             </p>
@@ -41,11 +41,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5" />
-                <span>info@drluciapiccardo.com</span>
+                <span>lucia.piccardo@gmail.com</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 mt-1" />
-                <span>Ruiz Huidobro 3059, depto 601<br />CABA</span>
+                <span>Ruiz Huidobro 3059, Saavedra<br />CABA</span>
               </div>
             </div>
           </div>
