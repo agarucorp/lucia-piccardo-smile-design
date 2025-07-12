@@ -187,19 +187,6 @@ const Contact = () => {
             <div className="bg-healthcare-light-blue rounded-3xl p-8 h-full flex flex-col justify-center min-h-full">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Envíanos un mensaje</h3>
               
-              {/* Status Messages */}
-              {submitStatus === 'success' && (
-                <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
-                  ¡Mensaje enviado exitosamente! Te responderemos pronto.
-                </div>
-              )}
-              
-              {submitStatus === 'error' && (
-                <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
-                  Hubo un error al enviar el mensaje. Por favor, intentá nuevamente.
-                </div>
-              )}
-              
               <form onSubmit={handleSubmit} className="space-y-6 flex flex-col h-full justify-center">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -339,6 +326,19 @@ const Contact = () => {
                     </>
                   )}
                 </Button>
+                
+                {/* Status Messages */}
+                {submitStatus === 'success' && (
+                  <div className="mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+                    ¡Mensaje enviado exitosamente! Te responderemos pronto.
+                  </div>
+                )}
+                
+                {submitStatus === 'error' && (
+                  <div className="mt-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+                    Hubo un error al enviar el mensaje. Por favor, intentá nuevamente.
+                  </div>
+                )}
               </form>
             </div>
           </div>

@@ -29,7 +29,7 @@ const About = () => {
               Conocé a la Od. Lucía Piccardo
             </h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Con más de 5 años de experiencia en odontología avanzada, la Dra. Lucía Piccardo se compromete a brindar tratamientos excepcionales con un enfoque humano y centrado en el paciente. Su pasión por la odontología y dedicación al aprendizaje continuo garantizan que recibas la atención más avanzada disponible.
+              Con más de 5 años de experiencia en odontología avanzada, la Od. Lucía Piccardo se compromete a brindar tratamientos excepcionales con un enfoque humano y centrado en el paciente. Su pasión por la odontología y dedicación al aprendizaje continuo garantizan que recibas la atención más avanzada disponible.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
