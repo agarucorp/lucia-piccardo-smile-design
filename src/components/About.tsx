@@ -26,10 +26,10 @@ const About = () => {
           {/* Right content */}
           <div className="animate-slide-in-right flex flex-col justify-center h-full">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Conocé a la Od. Lucía Piccardo
+              Trayectoria profesional
             </h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Con más de 5 años de experiencia en odontología avanzada, la Od. Lucía Piccardo se compromete a brindar tratamientos excepcionales con un enfoque humano y centrado en el paciente. Su pasión por la odontología y dedicación al aprendizaje continuo garantizan que recibas la atención más avanzada disponible.
+              Con más de 5 años de experiencia en odontología avanzada, nos comprometemos a brindar tratamientos excepcionales con un enfoque humano y centrado en el paciente. Nuestra pasión por la odontología y dedicación al aprendizaje continuo garantizan que recibas la atención más avanzada disponible.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">

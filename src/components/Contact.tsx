@@ -27,9 +27,9 @@ const Contact = () => {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   // EmailJS configuration
-  const EMAILJS_SERVICE_ID = 'service_9n5hz5p'; // Reemplazar con tu Service ID
-  const EMAILJS_TEMPLATE_ID = 'template_lmk13oj'; // Reemplazar con tu Template ID
-  const EMAILJS_PUBLIC_KEY = 'gSZSnSm2tBgf7HXno'; // Reemplazar con tu Public Key
+  const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
   // Validation functions
   const validateField = (name: string, value: string): string => {

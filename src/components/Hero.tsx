@@ -16,7 +16,7 @@ const Hero = () => {
               <span className="text-healthcare-blue block">perfecta empieza aquí</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              La Odontóloga Lucía Piccardo combina tecnología dental avanzada con atención humana para brindar resultados excepcionales. Viví la odontología de primer nivel en un entorno moderno y confortable.
+              Combinamos tecnología dental avanzada con atención humana para brindar resultados excepcionales. Viví la odontología de primer nivel en un entorno moderno y confortable.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
