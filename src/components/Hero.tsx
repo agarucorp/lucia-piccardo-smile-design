@@ -6,27 +6,34 @@ import lutcyConsul from './assets/lutcyConsul.jpg';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen bg-gradient-to-br from-healthcare-light-blue via-white to-healthcare-mint pt-16 md:pt-20">
+    <section id="home" className="min-h-screen bg-gradient-to-br from-healthcare-light-blue via-white to-healthcare-mint pt-6 md:pt-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center lg:h-[32rem]">
           {/* Left content */}
-          <div className="animate-fade-in-up">
-            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-              Tu sonrisa
-              <span className="text-healthcare-blue block">perfecta empieza aquí</span>
+          <div className="animate-fade-in-up flex flex-col justify-center h-full">
+            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6" style={{ fontFamily: 'Google Sans', fontWeight: 400 }}>
+              Salud y estética
+              <span className="text-healthcare-blue block">para tu sonrisa</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
               Combinamos tecnología dental avanzada con atención humana para brindar resultados excepcionales. Viví la odontología de primer nivel en un entorno moderno y confortable.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button size="lg" className="bg-healthcare-blue hover:bg-healthcare-dark-blue text-white px-8 py-6 text-lg">
-                Agendar turno
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button size="lg" variant="outline" className="border-healthcare-blue text-healthcare-blue hover:bg-healthcare-blue hover:text-white px-8 py-6 text-lg">
+              <a
+                href="https://wa.me/5491132677714"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <Button size="lg" className="bg-healthcare-blue hover:bg-healthcare-dark-blue text-white px-8 py-6 text-lg w-full">
+                  Agendar turno
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </a>
+              {/* <Button size="lg" variant="outline" className="border-healthcare-blue text-healthcare-blue hover:bg-healthcare-blue hover:text-white px-8 py-6 text-lg">
                 Saber más
-              </Button>
+              </Button> */}
             </div>
 
           </div>
@@ -46,7 +53,14 @@ const Hero = () => {
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">Turnos disponibles</p>
+                    <a
+                      href="https://wa.me/5491132677714"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-gray-900 hover:text-healthcare-blue transition-colors duration-200"
+                    >
+                      Turnos disponibles
+                    </a>
                     <p className="text-sm text-gray-600">¡Reservá tu consulta!</p>
                   </div>
                 </div>

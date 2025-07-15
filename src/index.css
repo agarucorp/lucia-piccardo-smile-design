@@ -37,7 +37,7 @@
 
     --radius: 0.5rem;
 
-    --healthcare-blue: 210 100% 40%;
+    --healthcare-blue: 236 85% 66%; /* #5d6af2 */
     --healthcare-light-blue: 210 100% 95%;
     --healthcare-dark-blue: 210 100% 25%;
     --healthcare-mint: 150 100% 85%;
@@ -150,4 +150,11 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--healthcare-dark-blue));
+}
+
+section[id],
+main > section,
+.main-section {
+  scroll-margin-top: 5rem;
+  margin-top: 1rem;
 }

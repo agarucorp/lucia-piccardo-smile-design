@@ -25,7 +25,7 @@ const About = () => {
 
           {/* Right content */}
           <div className="animate-slide-in-right flex flex-col justify-center h-full">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6" style={{ fontFamily: 'Mulish' }}>
               Trayectoria profesional
             </h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">

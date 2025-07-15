@@ -173,7 +173,7 @@ const Contact = () => {
     <section id="contact" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Mulish' }}>
             Agendá tu turno
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -185,7 +185,7 @@ const Contact = () => {
           {/* Left content - Contact Form */}
           <div className="flex flex-col justify-center h-full">
             <div className="bg-healthcare-light-blue rounded-3xl p-8 h-full flex flex-col justify-center min-h-full">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Envíanos un mensaje</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6" style={{ fontFamily: 'Mulish' }}>Envíanos un mensaje</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6 flex flex-col h-full justify-center">
                 <div>
@@ -346,7 +346,7 @@ const Contact = () => {
           {/* Right content - Contact Information */}
           <div className="flex flex-col justify-center h-full">
             <div className="bg-white rounded-3xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Contacto</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6" style={{ fontFamily: 'Mulish' }}>Contacto</h3>
               
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
