@@ -62,7 +62,7 @@ const Header = () => {
             </div>
             <div className="flex items-center space-x-2">
               <Clock className="h-4 w-4" />
-              <span>Viernes 14-20</span>
+              <span>Viernes 14:00-20:00 hs</span>
             </div>
           </div>
         </div>
