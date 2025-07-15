@@ -156,5 +156,5 @@ section[id],
 main > section,
 .main-section {
   scroll-margin-top: 5rem;
-  margin-top: 1rem;
+  padding-top: 2rem;
 }

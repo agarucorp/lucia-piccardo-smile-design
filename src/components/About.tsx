@@ -15,10 +15,10 @@ const About = () => {
                 alt="Od. Lucía Piccardo"
                 className="rounded-3xl shadow-2xl w-full h-96 object-cover"
               />
-              <div className="absolute -top-6 -right-6 bg-healthcare-blue rounded-2xl p-6 text-white">
-                <Award className="h-12 w-12 mb-2" />
-                <p className="font-semibold">Certificación profesional</p>
-                <p className="text-sm opacity-90">Excelencia en odontología</p>
+              <div className="absolute -top-3 -right-3 bg-healthcare-blue rounded-xl p-3 md:p-4 text-white w-44 md:w-56 flex flex-col items-center shadow-lg">
+                <Award className="h-8 w-8 mb-1 md:h-10 md:w-10 md:mb-2" />
+                <p className="font-semibold text-xs md:text-base text-center">Certificación profesional</p>
+                <p className="text-xs md:text-sm opacity-90 text-center">Excelencia en odontología</p>
               </div>
             </div>
           </div>
