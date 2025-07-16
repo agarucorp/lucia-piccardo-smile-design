@@ -62,7 +62,7 @@ const Header = () => {
             </div>
             <div className="flex items-center space-x-2">
               <Clock className="h-4 w-4" />
-              <span>Viernes 14:00-20:00 hs</span>
+              <span>Viernes 14:00-20:00</span>
             </div>
           </div>
         </div>
@@ -94,13 +94,13 @@ const Header = () => {
             <img
               src={logoLutcy}
               alt="Logo Lutcy"
-              className="w-full h-auto max-h-24 object-contain scale-50"
+              className="w-50 h-auto max-h-24 object-contain scale-50 -ml-2"
             />
           </div>
 
           {/* Desktop navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className="ml-10 flex items-baseline space-x-8 pr-4 sm:pr-6 lg:pr-6">
               {navItems.map((item) => (
                 <a
                   key={item.name}
