@@ -7,24 +7,20 @@ const FAQ = () => {
 
   const faqItems = [
     {
-      question: "¿Con qué frecuencia debo ir al dentista?",
+      question: "¿Con qué frecuencia debo ir al odontólogo?",
       answer: "Recomendamos una visita cada 6 meses para limpiezas y controles de rutina. Sin embargo, algunos pacientes pueden requerir visitas más frecuentes según sus necesidades. La Dra. Piccardo creará un plan personalizado para vos."
     },
     {
       question: "¿Aceptan obras sociales o prepagas?",
-      answer: "Sí, aceptamos la mayoría de las obras sociales y prepagas odontológicas. Nuestro equipo te ayudará a verificar tus beneficios y aprovechar al máximo tu cobertura. También ofrecemos opciones de pago flexibles para tratamientos no cubiertos."
+      answer: "No, la atención es únicamente particular."
     },
     {
       question: "¿Qué puedo esperar en mi primera consulta?",
-      answer: "Tu primera consulta incluye un examen completo, radiografías digitales si es necesario y una charla sobre tu historia clínica y tus inquietudes. Crearemos un plan de tratamiento personalizado y te explicaremos los procedimientos recomendados."
+      answer: "Tu primera consulta incluye un examen completo, solicitud de radiografías y una charla sobre tu historia clínica y tus inquietudes. Crearemos un plan de tratamiento personalizado y te explicaremos los procedimientos recomendados."
     },
     {
       question: "¿Las radiografías dentales son seguras?",
-      answer: "Sí, las radiografías dentales son muy seguras. Utilizamos radiografías digitales que emiten un 80% menos de radiación que las tradicionales. La exposición es mínima y comparable a la de un vuelo corto en avión."
-    },
-    {
-      question: "¿Cómo puedo manejar la ansiedad dental?",
-      answer: "Sabemos que la ansiedad dental es común. Nuestro equipo genera un ambiente tranquilo y cómodo, y ofrecemos opciones de sedación como óxido nitroso y sedación oral para que te sientas relajado durante el tratamiento."
+      answer: "Sí, las radiografías dentales son muy seguras. La exposición es mínima y comparable a la de un vuelo corto en avión."
     },
     {
       question: "¿Cuáles son los síntomas de que necesito una endodoncia?",
@@ -32,7 +28,7 @@ const FAQ = () => {
     },
     {
       question: "¿Cuánto duran los implantes dentales?",
-      answer: "Con el cuidado y mantenimiento adecuados, los implantes pueden durar toda la vida. La tasa de éxito es superior al 95% y la mayoría de los pacientes no tiene problemas durante décadas. Las visitas regulares ayudan a garantizar el éxito a largo plazo."
+      answer: "Con el cuidado y mantenimiento adecuados, los implantes pueden durar mucho tiempo. La tasa de éxito es superior al 95% y la mayoría de los pacientes no tiene problemas durante décadas. Las visitas regulares ayudan a garantizar el éxito a largo plazo."
     },
     {
       question: "¿Cuál es la diferencia entre coronas y carillas?",
