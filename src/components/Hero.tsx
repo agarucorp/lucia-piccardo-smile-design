@@ -6,7 +6,7 @@ import lutcyConsul from './assets/lutcyConsul.jpg';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen bg-gradient-to-br from-healthcare-light-blue via-white to-healthcare-mint pt-6 md:pt-10">
+    <section id="home" className="min-h-screen bg-gradient-to-br from-healthcare-light-blue via-white to-healthcare-mint pt-6 md:pt-10 mt-8 md:mt-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center lg:h-[32rem]">
           {/* Left content */}
