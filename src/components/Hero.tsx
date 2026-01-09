@@ -2,7 +2,7 @@
 import { ArrowRight, Shield, Award, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroLutcy from './assets/heroLutcy.jpg';
-import lutcyConsul from './assets/lutcyConsul.jpg';
+import consulLutcy from './assets/consulLutcy.jpg';
 
 const Hero = () => {
   return (
@@ -43,7 +43,7 @@ const Hero = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-healthcare-blue to-healthcare-dark-blue rounded-3xl transform rotate-3"></div>
               <img
-                src={lutcyConsul}
+                src={consulLutcy}
                 alt="Consultorio Lutcy"
                 className="relative rounded-3xl shadow-2xl w-full h-96 object-cover"
               />

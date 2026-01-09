@@ -42,8 +42,8 @@ const Footer = () => {
                 </div>
                 <div className="flex items-start space-x-3">
                   <MapPin className="h-5 w-5 mt-1" />
-                  <a href="https://maps.google.com/?q=Ruiz+Huidobro+3059,+Saavedra,+CABA,+Argentina" target="_blank" rel="noopener noreferrer" className="hover:underline transition-colors duration-200">
-                    Ruiz Huidobro 3059, Saavedra<br />CABA
+                  <a href="https://maps.google.com/?q=Alvarez+Thomas+3664,+Villa+Urquiza,+CABA,+Argentina" target="_blank" rel="noopener noreferrer" className="hover:underline transition-colors duration-200">
+                    Alvarez Thomas 3664, Villa Urquiza
                   </a>
                 </div>
               </div>

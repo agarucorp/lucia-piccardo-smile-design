@@ -52,17 +52,17 @@ const Header = () => {
             <div className="flex items-center space-x-2">
               <MapPin className="h-4 w-4" />
               <a 
-                href="https://maps.google.com/?q=Ruiz+Huidobro+3059,+Saavedra,+CABA,+Argentina" 
+                href="https://maps.google.com/?q=Alvarez+Thomas+3664,+Villa+Urquiza,+CABA,+Argentina" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:underline transition-colors duration-200"
               >
-                <span>Ruiz Huidobro 3059, Saavedra, CABA</span>
+                <span>Alvarez Thomas 3664, Villa Urquiza</span>
               </a>
             </div>
             <div className="flex items-center space-x-2">
               <Clock className="h-4 w-4" />
-              <span>Viernes 14:00-20:00</span>
+              <span>Martes 09:00-21:00</span>
             </div>
           </div>
         </div>

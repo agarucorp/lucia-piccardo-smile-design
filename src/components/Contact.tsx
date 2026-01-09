@@ -389,12 +389,12 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold text-gray-900">Dirección</h4>
                     <a 
-                      href="https://maps.google.com/?q=Ruiz+Huidobro+3059,+Saavedra,+CABA,+Argentina"
+                      href="https://maps.google.com/?q=Alvarez+Thomas+3664,+Villa+Urquiza,+CABA,+Argentina"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-600 hover:text-healthcare-blue transition-colors duration-200"
                     >
-                      Ruiz Huidobro 3059, Saavedra<br />CABA
+                      Alvarez Thomas 3664, Villa Urquiza
                     </a>
                   </div>
                 </div>
@@ -406,7 +406,7 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold text-gray-900">Horarios</h4>
                     <div className="text-gray-600 text-sm">
-                      <p>Viernes: 14:00 - 20:00 hs</p>
+                      <p>Martes: 09:00 - 21:00 hs</p>
                       <p>Otros días: Consultar</p>
                     </div>
                   </div>
@@ -415,7 +415,7 @@ const Contact = () => {
               <div className="mt-8 rounded-2xl overflow-hidden shadow">
                 <iframe
                   title="Ubicación en Google Maps"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.858964964049!2d-58.48412368477044!3d-34.63412398045309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6e2e2e2e2e2%3A0x1234567890abcdef!2sRuiz%20Huidobro%203059%2C%20CABA!5e0!3m2!1ses-419!2sar!4v1710000000000!5m2!1ses-419!2sar"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.5!2d-58.480!3d-34.580!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6e2e2e2e2e2%3A0x1234567890abcdef!2sAlvarez%20Thomas%203664%2C%20Villa%20Urquiza%2C%20CABA%2C%20Argentina!5e0!3m2!1ses-419!2sar!4v1710000000000!5m2!1ses-419!2sar"
                   width="100%"
                   height="250"
                   style={{ border: 0 }}
