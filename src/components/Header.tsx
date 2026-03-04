@@ -26,12 +26,12 @@ const Header = () => {
             <div className="flex items-center space-x-2">
               <Phone className="h-4 w-4" />
               <a 
-                href="https://wa.me/5491132677714" 
+                href="https://wa.me/5491124846114" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:underline transition-colors duration-200"
               >
-                <span>+54 9 11 3267-7714</span>
+                <span>+54 9 11 2484-6114</span>
               </a>
             </div>
           </div>
@@ -41,12 +41,12 @@ const Header = () => {
             <div className="flex items-center space-x-2">
               <Phone className="h-4 w-4" />
               <a 
-                href="https://wa.me/5491132677714" 
+                href="https://wa.me/5491124846114" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:underline transition-colors duration-200"
               >
-                <span>+54 9 11 3267-7714</span>
+                <span>+54 9 11 2484-6114</span>
               </a>
             </div>
             <div className="flex items-center space-x-2">

@@ -21,7 +21,7 @@ const Hero = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <a
-                href="https://wa.me/5491132677714"
+                href="https://wa.me/5491124846114"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block"
@@ -54,7 +54,7 @@ const Hero = () => {
                   </div>
                   <div>
                     <a
-                      href="https://wa.me/5491132677714"
+                      href="https://wa.me/5491124846114"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="font-semibold text-gray-900 hover:text-healthcare-blue transition-colors duration-200"

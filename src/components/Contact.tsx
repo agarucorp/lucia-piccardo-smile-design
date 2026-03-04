@@ -250,7 +250,7 @@ const Contact = () => {
                     className={`w-full bg-white border-gray-300 focus:border-healthcare-blue focus:ring-healthcare-blue [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none ${
                       errors.phone ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''
                     }`}
-                    placeholder="1132677714"
+                    placeholder="1124846114"
                     disabled={isSubmitting}
                   />
                   {errors.phone && (
@@ -356,12 +356,12 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold text-gray-900">Teléfono</h4>
                     <a 
-                      href="https://wa.me/5491132677714" 
+                      href="https://wa.me/5491124846114" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-gray-600 hover:text-healthcare-blue transition-colors duration-200"
                     >
-                      +54 9 11 3267-7714
+                      +54 9 11 2484-6114
                     </a>
                   </div>
                 </div>

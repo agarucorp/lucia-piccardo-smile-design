@@ -34,7 +34,7 @@ const Footer = () => {
               <div className="space-y-3 text-blue-100">
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5" />
-                  <a href="https://wa.me/5491132677714" target="_blank" rel="noopener noreferrer" className="hover:underline transition-colors duration-200">+54 9 11 3267-7714</a>
+                  <a href="https://wa.me/5491124846114" target="_blank" rel="noopener noreferrer" className="hover:underline transition-colors duration-200">+54 9 11 2484-6114</a>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5" />
@@ -62,7 +62,7 @@ const Footer = () => {
 // Botón flotante de WhatsApp
 const WhatsAppFloatingButton = () => (
   <a
-    href="https://wa.me/5491132677714"
+    href="https://wa.me/5491124846114"
     target="_blank"
     rel="noopener noreferrer"
     className="fixed bottom-6 right-6 z-[9999] transition-transform duration-200 hover:scale-110"
